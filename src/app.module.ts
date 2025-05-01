@@ -10,7 +10,7 @@ import { SubDepartmentsModule } from './sub-departments/sub-departments.module';
 @Module({
   imports: [
     ConfigModule.forRoot({
-      isGlobal: true, // Makes ConfigService available everywhere
+      isGlobal: true, // It Makes ConfigService available everywhere
     }),
     TypeOrmModule.forRootAsync({
       imports: [ConfigModule],

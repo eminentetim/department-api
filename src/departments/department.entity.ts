@@ -2,7 +2,7 @@ import { Entity, PrimaryGeneratedColumn, Column, OneToMany } from 'typeorm';
 import { SubDepartment } from '../sub-departments/sub-department.entity';
 import { Field, ID, ObjectType } from '@nestjs/graphql';
 
-@ObjectType() // <-- ADD THIS
+@ObjectType() 
 @Entity()
 export class Department {
   @Field(() => ID)
@@ -13,7 +13,7 @@ export class Department {
   @Column()
   name: string;
 
-  @Field(() => [SubDepartment], { nullable: true }) // <-- Add @Field to expose it in GraphQL
+  @Field(() => [SubDepartment], { nullable: true }) //  Adding @Field to expose it in GraphQL
   @OneToMany(() => SubDepartment, subDepartment => subDepartment.department)
   subDepartments: SubDepartment[];
 }

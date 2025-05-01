@@ -20,6 +20,6 @@ export class CreateDepartmentInput {
   @Field(() => [SubDepartmentInput], { nullable: true })
   @IsOptional()
   @ValidateNested({ each: true })
-  @Type(() => SubDepartmentInput) // Ensures that each SubDepartmentInput is properly transformed and validated
+  @Type(() => SubDepartmentInput) // Ensuring that each SubDepartmentInput is properly transformed and validated
   subDepartments?: SubDepartmentInput[];
 }
